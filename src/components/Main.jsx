@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom";
 import logo from '../images/logo.png';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export const Header = () => {
+
+    const [categoria,getCategoria] = useState ([]);
+
+    useEffect(() => {
+        axios.get('http://react.professorburnes.com.br/categoria').then((response) => {
+            getCategoria(response.data);
+        })
+    },[]);
+
     return(
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-primary">
