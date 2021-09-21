@@ -30,6 +30,13 @@ export const Header = () => {
                             <li className="nav-item">
                                 <Link to="/" className="nav-link">Home</Link>
                             </li>
+
+                            {categoria.map((item,index) => (
+                                <li className="nav-item">
+                                        <Link to={"/categoria/"+item.id} className="nav-link">{item.categoria}</Link>
+                                </li>
+                            ))}
+
                             <li className="nav-item">
                                 <Link to="/carrinho" className="nav-link">Carrinho</Link>
                             </li>
